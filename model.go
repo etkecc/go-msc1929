@@ -15,9 +15,9 @@ const (
 
 // Contact details
 type Contact struct {
-	Email    string `json:"email_address,omitempty"`
-	MatrixID string `json:"matrix_id,omitempty"`
-	Role     string `json:"role,omitempty"`
+	Email    string `json:"email_address,omitempty" yaml:"email_address,omitempty"`
+	MatrixID string `json:"matrix_id,omitempty" yaml:"matrix_id,omitempty"`
+	Role     string `json:"role,omitempty" yaml:"role,omitempty"`
 }
 
 // IsEmpty checks if contact contains at least one contact (either email or mxid)
@@ -40,9 +40,9 @@ func (c *Contact) IsSecurity() bool {
 
 // Response of the MSC1929 support file
 type Response struct {
-	Contacts    []*Contact `json:"contacts,omitempty"`     // Contacts list
-	SupportPage string     `json:"support_page,omitempty"` // SupportPage URL
-	sanitized   bool       `json:"-"`                      // Flag to indicate if the response has been sanitized
+	Contacts    []*Contact `json:"contacts,omitempty" yaml:"contacts,omitempty"`         // Contacts list
+	SupportPage string     `json:"support_page,omitempty" yaml:"support_page,omitempty"` // SupportPage URL
+	sanitized   bool       `json:"-"`                                                    // Flag to indicate if the response has been sanitized
 }
 
 // Sanitize ensures that all fields are valid, and removes those that are not
