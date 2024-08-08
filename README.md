@@ -11,7 +11,7 @@ package main
 
 import (
     "fmt"
-    "gitlab.com/etke.cc/msc1929"
+    "github.com/etkecc/go-msc1929"
 )
 
 func main() {
