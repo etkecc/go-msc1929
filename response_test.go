@@ -56,7 +56,7 @@ func TestResponse_Sanitize(t *testing.T) {
 	resp := &Response{
 		Contacts: []*Contact{
 			{Email: "invalid-email", MatrixID: "invalid"},
-			{Email: "valid@example.com", MatrixID: "@valid:example.com"},
+			{Email: "valid@example.com", MatrixID: "@az09._=/-+:example.com"},
 		},
 		SupportPage: "http://valid.url",
 	}
@@ -67,7 +67,7 @@ func TestResponse_Sanitize(t *testing.T) {
 	if resp.Contacts[0].Email != "valid@example.com" {
 		t.Errorf("expected valid email, got %s", resp.Contacts[0].Email)
 	}
-	if resp.Contacts[0].MatrixID != "@valid:example.com" {
+	if resp.Contacts[0].MatrixID != "@az09._=/-+:example.com" {
 		t.Errorf("expected valid matrix ID, got %s", resp.Contacts[0].MatrixID)
 	}
 }
