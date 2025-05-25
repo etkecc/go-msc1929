@@ -19,6 +19,11 @@ const (
 	RoleDPOUnstable = "org.matrix.msc4265.role.dpo"
 )
 
+// SupportedRoles contains all roles that are supported by the support file
+var SupportedRoles = []string{
+	RoleAdmin, RoleModerator, RoleModeratorUnstable, RoleSecurity, RoleDPO, RoleDPOUnstable,
+}
+
 // Contact details
 type Contact struct {
 	Email    string `json:"email_address,omitempty" yaml:"email_address,omitempty"`
