@@ -29,6 +29,7 @@ type Contact struct {
 	Email    string `json:"email_address,omitempty" yaml:"email_address,omitempty"`
 	MatrixID string `json:"matrix_id,omitempty" yaml:"matrix_id,omitempty"`
 	Role     string `json:"role,omitempty" yaml:"role,omitempty"`
+	PgpKey   string `json:"dev.zirco.msc4439.pgp_key,omitempty" yaml:"dev.zirco.msc4439.pgp_key,omitempty"`
 }
 
 // IsEmpty checks if contact contains at least one contact (either email or mxid)

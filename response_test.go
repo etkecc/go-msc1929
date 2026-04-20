@@ -13,6 +13,7 @@ func TestContact_IsEmpty(t *testing.T) {
 		{"nil contact", nil, true},
 		{"empty contact", &Contact{}, true},
 		{"contact with email", &Contact{Email: "test@example.com"}, false},
+		{"contact with email and PGP key", &Contact{Email: "test@example.com", PgpKey:"https://example.com/pgp.key"}, false},
 		{"contact with matrix ID", &Contact{MatrixID: "@user:example.com"}, false},
 		{"contact with both", &Contact{Email: "test@example.com", MatrixID: "@user:example.com"}, false},
 	}
